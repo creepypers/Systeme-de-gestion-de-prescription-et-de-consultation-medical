@@ -6,31 +6,38 @@ using SystèmeGestionConsultationPrescriptions.Core.Interfaces;
 
 namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 {
-    public class Session : BaseEntity, IAggregateRoot
+    public class Session : BaseEntity
     {
+       
+        public DateTime? DateConnexion { get; private set; }
+        public DateTime? DateDeconnexion { get; private set; }
+
+        // Relation avec les consultations
         [NotMapped]
-        public int IdSession { get; private set; }
-        public DateTime DateConnexion { get; private set; }
-        public DateTime? DateDeconnexion { get; set; }
-        public int IdentifiantUtilisateur { get; private set; }
-        private readonly IAuthenticationService? _authService;
+        public virtual List<Consultation> _consultations { get; set; } = new List<Consultation>();
 
         public Session()
         {
-
+           
         }
 
-        public Session(int identifiantUtilisateur)
+        
+       public Session(DateTime dateConnexion ,DateTime dateDeconnexion)
+       {
+            DateConnexion = dateConnexion;
+            DateDeconnexion = dateDeconnexion;
+
+       }
+
+        public void AjouterConsultation(Consultation consultation)
         {
-            IdentifiantUtilisateur = identifiantUtilisateur;
-            DateConnexion = DateTime.Now;
-            
+            _consultations.Add(consultation);
         }
 
-        public Session(IAuthenticationService authService)
+        public void RetirerConsultation(Consultation consultation)
         {
-            _authService = authService;
-            DateConnexion = DateTime.Now;
+            _consultations.Remove(consultation);
         }
+
     }
 } 

@@ -10,32 +10,20 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Repository
         {
         }
 
-        public async Task<Patient> GetByIdWithDossierMedicalAsync(int id)
+        public async Task<Patient> GetByIdWithDossiersMedicauxAsync(int id)
         {
             return await _SystèmeGestionConsultationPrescriptionsContext.Patients
                 .Include(p => p.DossierMedical)
-                .FirstOrDefaultAsync(p => p.Id == id);
+                .FirstOrDefaultAsync(p => p.Id == id)!;
         }
 
-        public Patient GetByIdWithDossierMedical(int id)
+        public Patient GetByIdWithDossiersMedicaux(int id)
         {
             return _SystèmeGestionConsultationPrescriptionsContext.Patients
                 .Include(p => p.DossierMedical)
-                .FirstOrDefault(p => p.Id == id);
+                .FirstOrDefault(p => p.Id == id)!;
         }
 
-        public async Task<IEnumerable<Patient>> GetByMedecinIdAsync(int medecinId)
-        {
-            return await _SystèmeGestionConsultationPrescriptionsContext.Patients
-                .Where(p => p.IdMedecin == medecinId)
-                .ToListAsync();
-        }
-
-        public IEnumerable<Patient> GetByMedecinId(int medecinId)
-        {
-            return _SystèmeGestionConsultationPrescriptionsContext.Patients
-                .Where(p => p.IdMedecin == medecinId)
-                .ToList();
-        }
+       
     }
 } 

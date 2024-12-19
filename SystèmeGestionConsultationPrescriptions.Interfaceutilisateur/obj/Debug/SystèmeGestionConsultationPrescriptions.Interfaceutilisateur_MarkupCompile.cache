@@ -1,0 +1,20 @@
+﻿SystèmeGestionConsultationPrescriptions.Interfaceutilisateur
+
+
+winexe
+C#
+.cs
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Interfaceutilisateur\obj\Debug\
+SystèmeGestionConsultationPrescriptions.Interfaceutilisateur
+none
+false
+DEBUG;TRACE
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Interfaceutilisateur\App.xaml
+61075338468
+
+22-116136264
+43-1756002671
+Views\LoginView.xaml;Views\MainView.xaml;Views\ConsultationDialogView.xaml;Views\PrescriptionDialogView.xaml;Views\ConsulterPrescriptionDialogView.xaml;Views\HistoriquePatientView.xaml;
+
+False
+

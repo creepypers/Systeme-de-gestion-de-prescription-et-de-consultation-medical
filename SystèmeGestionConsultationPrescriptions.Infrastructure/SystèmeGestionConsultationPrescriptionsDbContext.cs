@@ -25,7 +25,7 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure
         public SystèmeGestionConsultationPrescriptionsDBContext(DbContextOptions options) : base(options) { }
 
         public SystèmeGestionConsultationPrescriptionsDBContext() : base(new DbContextOptionsBuilder<SystèmeGestionConsultationPrescriptionsDBContext>()
-                    .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SystèmeGestionConsultationPrescriptionsDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False")
+                    .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SystèmeGestionConsultationPrescriptionsDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False")
                     .Options)
         { }
     }

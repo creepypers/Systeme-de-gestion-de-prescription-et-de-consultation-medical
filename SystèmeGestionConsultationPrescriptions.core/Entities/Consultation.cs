@@ -9,11 +9,20 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
         [NotMapped]
         public int Identifiant { get; private set; }
         public DateTime Date { get; private set; }
-        public string? Motif { get; private set; }
-        public string? Observations { get; private set; }
-        public string? Diagnostic { get; private set; }
-        public List<Prescription> Prescriptions { get; private set; } = new();
-        
+        public string Motif { get; private set; }
+        public string Observations { get; private set; }
+        public string Diagnostic { get; private set; }
+
+        // Relation many-to-one avec DossierMedical
+        public int DossierMedicalId { get; private set; }
+        public DossierMedical DossierMedical { get; private set; }
+
+        // Relation many-to-one avec Medecin
+        public int MedecinId { get; private set; }
+        public Medecin Medecin { get; private set; }
+
+        // Relation one-to-many avec Prescription
+        public virtual List<Prescription> _prescriptions { get; set; } = new List<Prescription>();
 
         public Consultation(DateTime date, string motif, 
             string observations, string diagnostic)
@@ -28,9 +37,14 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 
         }
 
-        public void AjouterPrescription(Prescription prescription)
+        public void AjouterPrescription(Prescription _prescription)
         {
-            Prescriptions.Add(prescription);
+            _prescriptions.Add(_prescription);
+        }
+
+        public void SupprimerPrescription(Prescription _prescription)
+        {
+            _prescriptions.Remove(_prescription);
         }
     }
 } 

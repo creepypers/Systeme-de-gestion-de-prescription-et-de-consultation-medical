@@ -3,7 +3,7 @@ using SystèmeGestionConsultationPrescriptions.SharedKernel;
 
 namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 {
-    [NotMapped]
+  
     public abstract class Utilisateur : BaseEntity
     {
         
@@ -18,9 +18,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
             MotDePasse = motDePasse;
         }
 
-        public bool Valider(string nomUtilisateur, string motDePasse)
-        {
-            return NomUtilisateur == nomUtilisateur && MotDePasse == motDePasse;
-        }
+        public abstract bool Valider(string nomUtilisateur, string motDePasse);
+        
     }
 } 

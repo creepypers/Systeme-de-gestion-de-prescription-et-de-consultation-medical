@@ -1,65 +1,73 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using SystèmeGestionConsultationPrescriptions.Core.Entities;
 using SystèmeGestionConsultationPrescriptions.Core.Interfaces;
+using SystèmeGestionConsultationPrescriptions.SharedKernel.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Transactions;
 
 namespace SystèmeGestionConsultationPrescriptions.Core.Services
 {
     public class ConsultationService : IConsultationService
     {
         private readonly IConsultationRepository _consultationRepository;
+        private readonly IAsyncRepository<Prescription> _prescriptionRepository;
 
-        public ConsultationService(IConsultationRepository consultationRepository)
+        public ConsultationService(IConsultationRepository consultationRepository, IPrescriptionRepository prescriptionRepository)
         {
             _consultationRepository = consultationRepository;
+            _prescriptionRepository = prescriptionRepository;
         }
 
-        public async Task<Consultation> GetConsultationAsync(int id)
+        public async Task AddConsultation(Consultation consultation)
         {
-            return await _consultationRepository.GetByIdWithPrescriptionsAsync(id);
+            await _consultationRepository.AddAsync(consultation);
         }
 
-        public Consultation GetConsultation(int id)
+        public async Task AddPrescription(int idConsultation, Prescription prescription)
         {
-            return _consultationRepository.GetByIdWithPrescriptions(id);
+            Consultation consultation = await _consultationRepository.GetByIdWithPrescriptionsAsync(idConsultation);
+            if (consultation != null)
+            {
+                consultation.AjouterPrescription(prescription);
+                await _consultationRepository.UpdateAsync(consultation);
+
+            }
         }
 
-        public async Task<IEnumerable<Prescription>> GetPrescriptionsAsync(int consultationId)
+        public async Task DeleteConsultation(Consultation consultation)
         {
-            return await _consultationRepository.GetPrescriptionsByConsultationIdAsync(consultationId);
+            await _consultationRepository.DeleteAsync(consultation);
         }
 
-        public IEnumerable<Prescription> GetPrescriptions(int consultationId)
-        {
-            return _consultationRepository.GetPrescriptionsByConsultationId(consultationId);
+        public async Task<Consultation> GetConsultation(int idConsultation)
+        { 
+            return await _consultationRepository.GetByIdWithPrescriptionsAsync(idConsultation);
         }
 
-        public async Task AjouterPrescriptionAsync(int consultationId, Prescription prescription)
+        public async Task GetPrescription(int idConsultation, Prescription prescription)
         {
-            var consultation = await _consultationRepository.GetByIdAsync(consultationId);
-            consultation.AjouterPrescription(prescription);
+            await _prescriptionRepository.GetByIdAsync(prescription.Id);
+        }
+
+        public async Task UpdateConsultation(Consultation consultation)
+        {
             await _consultationRepository.UpdateAsync(consultation);
         }
 
-        public async Task ModifierConsultationAsync(Consultation consultation)
+        public async Task UpdatePrescription(int idConsultation, Prescription prescription)
         {
-            await _consultationRepository.UpdateAsync(consultation);
-        }
-
-        public void ModifierConsultation(Consultation consultation)
-        {
-            _consultationRepository.Update(consultation);
-        }
-
-        public async Task<IEnumerable<Consultation>> GetConsultationsByMedecinAsync(int medecinId)
-        {
-            return await _consultationRepository.GetByDossierMedicalIdAsync(medecinId);
-        }
-
-        public IEnumerable<Consultation> GetConsultationsByMedecin(int medecinId)
-        {
-            return _consultationRepository.GetByDossierMedicalId(medecinId);
+            Consultation consultation = await _consultationRepository.GetByIdAsync(idConsultation);
+            if (consultation == null) return;
+            Prescription? p = consultation._prescriptions?.FirstOrDefault(x => x.Id == prescription.Id);
+            if (p != null)
+            {
+                consultation.SupprimerPrescription(p);
+            }
+            consultation._prescriptions?.Add(prescription);
+            await _consultationRepository.UpdateAsync(consultation);  
         }
     }
 }

@@ -1,17 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using SystèmeGestionConsultationPrescriptions.Core.Entities;
 using SystèmeGestionConsultationPrescriptions.SharedKernel.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
 {
-    public interface IPatientRepository : IAsyncRepository<Patient>, IRepository<Patient>
+    public interface IPatientRepository: IAsyncRepository<Patient>, IRepository<Patient>
     {
-        Task<Patient> GetByIdWithDossierMedicalAsync(int id);
-        Patient GetByIdWithDossierMedical(int id);
-        
-        Task<IEnumerable<Patient>> GetByMedecinIdAsync(int medecinId);
-        IEnumerable<Patient> GetByMedecinId(int medecinId);
+        Task<Patient> GetByIdWithDossiersMedicauxAsync(int id);
+        Patient GetByIdWithDossiersMedicaux(int id);
     }
-} 
+}
