@@ -1,0 +1,12 @@
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj.AssemblyReference.cache
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.AssemblyInfoInputs.cache
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.AssemblyInfo.cs
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj.CoreCompileInputs.cache
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\bin\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.deps.json
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\bin\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.dll
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\bin\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.pdb
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.dll
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\obj\Debug\net8.0\refint\SystèmeGestionConsultationPrescriptions.SharedKernel.dll
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.pdb
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.SharedKernel\obj\Debug\net8.0\ref\SystèmeGestionConsultationPrescriptions.SharedKernel.dll

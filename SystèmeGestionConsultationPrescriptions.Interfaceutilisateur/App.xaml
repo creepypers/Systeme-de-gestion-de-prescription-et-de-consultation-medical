@@ -1,0 +1,9 @@
+﻿<Application x:Class="SystèmeGestionConsultationPrescriptions.Interfaceutilisateur.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SystèmeGestionConsultationPrescriptions.Interfaceutilisateur"
+             StartupUri="Views/LoginView.xaml">
+    <Application.Resources>
+        <!-- Copier tous les styles de ressources ici -->
+    </Application.Resources>
+</Application>

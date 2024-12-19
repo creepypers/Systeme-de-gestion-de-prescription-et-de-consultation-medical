@@ -1,0 +1,231 @@
+<Window x:Class="SystèmeGestionConsultationPrescriptions.Interfaceutilisateur.Views.PrescriptionDialogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nouvelle Prescription" 
+        Height="700" Width="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F5F5F5">
+
+    <Window.Resources>
+        <!-- Colors -->
+        <Color x:Key="PrimaryColor">#162640</Color>
+        <Color x:Key="SecondaryColor">#3e5369</Color>
+        <Color x:Key="AccentColor">#667f92</Color>
+        <Color x:Key="LightAccentColor">#86adae</Color>
+        <Color x:Key="BackgroundColor">#a2d4c4</Color>
+
+        <!-- Convertir les couleurs en brosses -->
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+        <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+        <SolidColorBrush x:Key="LightAccentBrush" Color="{StaticResource LightAccentColor}"/>
+        <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
+
+        <!-- Style pour les titres -->
+        <Style x:Key="TitleTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Margin" Value="0,0,0,20"/>
+        </Style>
+
+        <!-- Style pour les labels -->
+        <Style x:Key="LabelTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Foreground" Value="{StaticResource AccentBrush}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+        </Style>
+
+        <!-- Style pour les champs de texte -->
+        <Style x:Key="ModernTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="{StaticResource LightAccentBrush}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style pour le DatePicker -->
+        <Style x:Key="ModernDatePickerStyle" TargetType="DatePicker">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{StaticResource LightAccentBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="IsTodayHighlighted" Value="True"/>
+            <Style.Resources>
+                <Style TargetType="DatePickerTextBox">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <!-- Style pour les boutons d'action -->
+        <Style x:Key="ModernActionButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource SecondaryBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style pour le bouton Annuler -->
+        <Style x:Key="DeleteButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#D32F2F"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#C62828"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style pour la ComboBox -->
+        <Style x:Key="ModernComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{StaticResource LightAccentBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,5"/>
+        </Style>
+    </Window.Resources>
+    
+    <Border Background="White"
+            Margin="20"
+            Padding="30"
+            CornerRadius="10">
+        <StackPanel>
+            <!-- En-tête -->
+            <TextBlock Text="Nouvelle Prescription" 
+                     Style="{StaticResource TitleTextStyle}"
+                     HorizontalAlignment="Center"/>
+
+            <!-- Formulaire -->
+            <Grid Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Consultation associée -->
+                <TextBlock Text="Consultation :" 
+                         Grid.Row="0" Grid.Column="0"
+                         Style="{StaticResource LabelTextStyle}"/>
+                <ComboBox Grid.Row="0" Grid.Column="1"
+                        Style="{StaticResource ModernComboBoxStyle}"
+                        ItemsSource="{Binding Patient.Consultations}"
+                        SelectedItem="{Binding SelectedConsultation}"
+                        DisplayMemberPath="Motif"/>
+
+                <!-- Date de prescription -->
+
+                <!-- Médicament -->
+                <TextBlock Text="Médicament :" 
+                         Grid.Row="4" Grid.Column="0"
+                         Style="{StaticResource LabelTextStyle}"/>
+                <TextBox Grid.Row="4" Grid.Column="1"
+                       Style="{StaticResource ModernTextBoxStyle}"
+                       Text="{Binding Medicament, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!-- Posologie -->
+                <TextBlock Text="Posologie :" 
+                         Grid.Row="6" Grid.Column="0"
+                         Style="{StaticResource LabelTextStyle}"/>
+                <TextBox Grid.Row="6" Grid.Column="1"
+                       Style="{StaticResource ModernTextBoxStyle}"
+                       Text="{Binding Posologie, UpdateSourceTrigger=PropertyChanged}"
+                       TextWrapping="Wrap"
+                       Height="80"
+                       AcceptsReturn="True"/>
+
+                <!-- Durée -->
+                <TextBlock Text="Durée :" 
+                         Grid.Row="8" Grid.Column="0"
+                         Style="{StaticResource LabelTextStyle}"/>
+                <TextBox Grid.Row="8" Grid.Column="1"
+                       Style="{StaticResource ModernTextBoxStyle}"
+                       Text="{Binding Duree, UpdateSourceTrigger=PropertyChanged}"/>
+
+             
+               
+            </Grid>
+
+            <!-- Boutons -->
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Right"
+                        Margin="0,40,0,0">
+                <Button Content="Valider"
+                        Style="{StaticResource ModernActionButtonStyle}"
+                        Command="{Binding SaveCommand}"
+                        Margin="0,0,10,0"/>
+                <Button Content="Annuler"
+                        Style="{StaticResource DeleteButtonStyle}"
+                        Command="{Binding CancelCommand}"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

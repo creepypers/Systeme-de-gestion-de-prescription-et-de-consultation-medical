@@ -1,0 +1,15 @@
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\bin\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.deps.json
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\bin\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.dll
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\bin\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.pdb
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\bin\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.dll
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\bin\Debug\net8.0\SystèmeGestionConsultationPrescriptions.SharedKernel.pdb
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.csproj.AssemblyReference.cache
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.AssemblyInfoInputs.cache
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.AssemblyInfo.cs
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.csproj.CoreCompileInputs.cache
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.dll
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\refint\SystèmeGestionConsultationPrescriptions.Core.dll
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\SystèmeGestionConsultationPrescriptions.Core.pdb
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\ref\SystèmeGestionConsultationPrescriptions.Core.dll
+C:\Users\elida\Downloads\Architecture Clean\Architecture Clean\SystèmeGestionConsultationPrescriptions.Core\obj\Debug\net8.0\Syst_meG.3EDA856A.Up2Date
