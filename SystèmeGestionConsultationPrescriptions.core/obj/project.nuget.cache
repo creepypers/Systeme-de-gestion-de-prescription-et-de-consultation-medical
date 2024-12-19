@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jioVzIAEDsM=",
+  "dgSpecHash": "jryL0L49AMw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Core\\SystèmeGestionConsultationPrescriptions.Core.csproj",
+  "projectFilePath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.core\\SystèmeGestionConsultationPrescriptions.core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elida\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\elida\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",

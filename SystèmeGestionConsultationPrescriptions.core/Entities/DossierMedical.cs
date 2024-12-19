@@ -9,7 +9,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
     {
         [NotMapped]
         public int Identifiant { get; private set; }
-        public Patient Patient { get; set; }
+        
 
         public int IdentifiantPatient { get; private set; }
 
