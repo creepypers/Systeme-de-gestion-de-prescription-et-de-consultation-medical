@@ -11,8 +11,8 @@
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.0",
-          "SystèmeGestionConsultationPrescriptions.SharedKernel": "1.0.0",
-          "SystèmeGestionConsultationPrescriptions.core": "1.0.0"
+          "SystèmeGestionConsultationPrescriptions.Core": "1.0.0",
+          "SystèmeGestionConsultationPrescriptions.SharedKernel": "1.0.0"
         },
         "runtime": {
           "SystèmeGestionConsultationPrescriptions.Infrastructure.dll": {}
@@ -1060,12 +1060,12 @@
           }
         }
       },
-      "SystèmeGestionConsultationPrescriptions.core/1.0.0": {
+      "SystèmeGestionConsultationPrescriptions.Core/1.0.0": {
         "dependencies": {
           "SystèmeGestionConsultationPrescriptions.SharedKernel": "1.0.0"
         },
         "runtime": {
-          "SystèmeGestionConsultationPrescriptions.core.dll": {
+          "SystèmeGestionConsultationPrescriptions.Core.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1657,7 +1657,7 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "SystèmeGestionConsultationPrescriptions.core/1.0.0": {
+    "SystèmeGestionConsultationPrescriptions.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
