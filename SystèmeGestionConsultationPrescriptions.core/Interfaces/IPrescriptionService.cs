@@ -1,4 +1,5 @@
 ﻿using SystèmeGestionConsultationPrescriptions.Core.Entities;
+using SystèmeGestionConsultationPrescriptions.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,20 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
 {
     public interface IPrescriptionService
     {
-        Task AddPrescription(Prescription prescription);
-        Task UpdatePrescription(Prescription prescription);
-        Task<Prescription> GetPrescription(int idPrescription);
-        Task DeletePrescription(Prescription prescription);
-        Task CloturePrescription(Prescription prescription);
+        // Async operations
+        Task AddPrescriptionAsync(Prescription prescription);
+        Task UpdatePrescriptionAsync(Prescription prescription);
+        Task DeletePrescriptionAsync(Prescription prescription);
+        Task ChangerEtatPrescriptionAsync(int idPrescription);
+        
+        // Sync operations
+        Prescription AddPrescription(Prescription prescription);
+        int UpdatePrescription(Prescription prescription);
+        Prescription GetPrescriptionById(int idPrescription);
+        int DeletePrescription(Prescription prescription);
+        
+        
+        // Query operations
+
     }
 }

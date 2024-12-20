@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.core\\SystèmeGestionConsultationPrescriptions.core.csproj": {
-                "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.core\\SystèmeGestionConsultationPrescriptions.core.csproj"
+              "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Core\\SystèmeGestionConsultationPrescriptions.Core.csproj": {
+                "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Core\\SystèmeGestionConsultationPrescriptions.Core.csproj"
               },
               "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Infrastructure\\SystèmeGestionConsultationPrescriptions.Infrastructure.csproj": {
                 "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Infrastructure\\SystèmeGestionConsultationPrescriptions.Infrastructure.csproj"
@@ -57,13 +57,25 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[17.8.0, )"
             },
-            "Microsoft.Extensions.DependencyInjection": {
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.6.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.5.4, )"
             }
           },
           "imports": [

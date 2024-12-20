@@ -1,20 +1,36 @@
-using SystèmeGestionConsultationPrescriptions.Core.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using SystèmeGestionConsultationPrescriptions.Core.Entities;
 
 namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
 {
     public interface IConsultationService
     {
-        Task AddConsultation(Consultation consultation);
-        Task UpdateConsultation(Consultation consultation);
-        Task DeleteConsultation(Consultation consultation);
-        Task <Consultation> GetConsultation(int idConsultation);
-        Task AddPrescription(int idConsultation, Prescription prescription);
-        Task UpdatePrescription(int idConsultation, Prescription prescription);
-        Task GetPrescription(int idConsultation, Prescription prescription);
+        // Async operations
+        Task AddConsultationAsync(Consultation consultation);
+        Task UpdateConsultationAsync(Consultation consultation);
+        Task<Consultation> GetConsultationByIdAsync(int idConsultation);
+        Task DeleteConsultationAsync(Consultation consultation);
+        Task AddPrescriptionAsync(int idConsultation, Prescription prescription);
+        Task UpdatePrescriptionAsync(int idConsultation, Prescription prescription);
+        Task<Consultation> GetByIdWithPrescriptionsAsync(int id);
+        Consultation GetByIdWithPrescriptions(int id);
+
+        Task<Consultation> GetByIdWithDossierMedicalAsync(DossierMedical dossierMedical);
+        Consultation GetByIdWithDossierMedical(DossierMedical dossierMedical);
+
+        Task<Consultation> GetByIdWithSessionAsync(Session session);
+        Consultation GetByIdWithSession(Session session);
+        
+        
+
+        Consultation AddConsultation(Consultation consultation);
+        int UpdateConsultation(Consultation consultation);
+        Consultation GetConsultationById(int idConsultation);
+        int DeleteConsultation(Consultation consultation);
+        
+        
+        List<Consultation> GetConsultations(bool includePrescriptions);
     }
 }

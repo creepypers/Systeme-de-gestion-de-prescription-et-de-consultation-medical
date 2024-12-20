@@ -5,21 +5,22 @@ using SystèmeGestionConsultationPrescriptions.SharedKernel.Interfaces;
 
 namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 {
-    public class Patient : BaseEntity, IAggregateRoot,ISubject
+    public class Patient : BaseEntity, IAggregateRoot
     {
-        private List<IObserver> _observers = new List<IObserver>();
+        public List<IObserver> _observers = new List<IObserver>();
 
         [NotMapped]
-        public int Identifiant { get; private set; }
-        public string? Nom { get; private set; }
-        public DateTime? DateNaissance { get; private set; }
-        public string? Adresse { get; private set; }
-        public string? NumeroTelephone { get; private set; }
-        public string? AdresseCourriel { get; private set; }
+        public int Identifiant { get; set; }
+        public string? Nom { get; set; }
+        public DateTime? DateNaissance { get; set; }
+        public string? Adresse { get; set; }
+        public string? NumeroTelephone { get; set; }
+        public string? AdresseCourriel { get; set; }
         
-        public Medecin? Medecin { get; private set; }
+        public int?  MedecinId { get; set; }
+        public  Medecin? Medecin { get; set; }
 
-        public DossierMedical? DossierMedical { get; private set; }
+        public  DossierMedical?   DossierMedical { get; set; }
 
         public Patient(string nom, DateTime dateNaissance, 
             string adresse, string numeroTelephone, string adresseCourriel, Medecin medecin, DossierMedical dossierMedical)
@@ -36,27 +37,6 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
     
         }
 
-        public void Attach(IObserver observer)
-        {
-            _observers.Add(observer);
-        }
-
-        public void Detach(IObserver observer)
-        {
-            _observers.Remove(observer);
-        }
-
-        public void Notify()
-        {
-            foreach (var observer in _observers)
-            {
-                observer.Update(this);
-            }
-        }
-
-        public void AssignerDossierMedical(DossierMedical dossierMedical)
-        {
-            DossierMedical = dossierMedical;
-        }
+        
     }
 } 

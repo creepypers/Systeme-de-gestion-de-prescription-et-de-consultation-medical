@@ -16,15 +16,43 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Repository
         public Task<Consultation> GetByIdWithPrescriptionsAsync(int id)
         {
             return _SystèmeGestionConsultationPrescriptionsContext.Consultations
-                  .Include(c => c._prescriptions)
+                  .Include(c => c.Prescriptions)
                   .FirstOrDefaultAsync(c => c.Id == id)!;
         }
 
         public Consultation GetByIdWithPrescriptions(int id)
         {
             return _SystèmeGestionConsultationPrescriptionsContext.Consultations
-                   .Include(c => c._prescriptions)
+                   .Include(c => c.Prescriptions)
                    .FirstOrDefault(c => c.Id == id)!;
+        }
+
+        public async Task<Consultation> GetByIdWithDossierMedicalAsync(DossierMedical dossierMedical)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.Consultations
+                .Include(c => c.DossierMedical)
+                .FirstOrDefaultAsync(c => c.DossierMedicalId == dossierMedical.Id)!;
+        }
+
+        public Consultation GetByIdWithDossierMedical(DossierMedical dossierMedical)
+        {
+            return _SystèmeGestionConsultationPrescriptionsContext.Consultations
+                .Include(c => c.DossierMedical)
+                .FirstOrDefault(c => c.DossierMedicalId == dossierMedical.Id)!;
+        }
+
+        public async Task<Consultation> GetByIdWithSessionAsync(Session session)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.Consultations
+                .Include(c => c.Session)
+                .FirstOrDefaultAsync(c => c.SessionId == session.Id)!;
+        }
+
+        public Consultation GetByIdWithSession(Session session)
+        {
+            return _SystèmeGestionConsultationPrescriptionsContext.Consultations
+                .Include(c => c.Session)
+                .FirstOrDefault(c => c.SessionId == session.Id)!;
         }
     }
 }

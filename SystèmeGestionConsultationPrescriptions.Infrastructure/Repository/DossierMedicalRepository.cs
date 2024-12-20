@@ -26,5 +26,35 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Repository
                    .Include(c => c.IdentifiantPatient)
                    .FirstOrDefault(c => c.Id == id)!;
         }
+
+        public async Task<DossierMedical> GetByIdWithConsultationsAsync(int id)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.DossiersMedical
+                .Include(d => d.Consultations)
+                .FirstOrDefaultAsync(d => d.Id == id)!;
+        }
+
+        public DossierMedical GetByIdWithConsultations(int id)
+        {
+            return _SystèmeGestionConsultationPrescriptionsContext.DossiersMedical
+                .Include(d => d.Consultations)
+                .FirstOrDefault(d => d.Id == id)!;
+        }
+
+        public async Task<DossierMedical> GetByIdWithPrescriptionsAsync(int id)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.DossiersMedical
+                .Include(d => d.Consultations       )
+                .ThenInclude(c => c.Prescriptions)
+                .FirstOrDefaultAsync(d => d.Id == id)!;
+        }
+
+        public DossierMedical GetByIdWithPrescriptions(int id)
+        {
+                return _SystèmeGestionConsultationPrescriptionsContext.DossiersMedical
+                .Include(d => d.Consultations)
+                .ThenInclude(c => c.Prescriptions)
+                .FirstOrDefault(d => d.Id == id)!;
+        }
     }
 }

@@ -2,69 +2,45 @@ using SystèmeGestionConsultationPrescriptions.SharedKernel;
 using SystèmeGestionConsultationPrescriptions.Core.DesignPatterns;
 using System.ComponentModel.DataAnnotations.Schema;
 using SystèmeGestionConsultationPrescriptions.SharedKernel.Interfaces;
+using SystèmeGestionConsultationPrescriptions.Core.Enums;
 
 namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 {
-    public enum EtatPrescription
-    {
-        Active,
-        Terminee,
-        Annulee
-    }
-
-    public class Prescription : BaseEntity, IAggregateRoot
-    {
-        private List<IObserver> _observers = new List<IObserver>();
-    [NotMapped]
-        public int Identifiant { get; private set; }
-        public string? Medicament { get; private set; }
-        public int Dosage { get; private set; }
-        public string? Instructions { get; private set; }
-        public DateTime DateDebut { get; private set; }
-        public DateTime DateFin { get; private set; }
-        public TimeSpan Duree { get; private set; }
-        public EtatPrescription Etat { get; private set; }
-        public Consultation? Consultation { get; private set; }
-        public Patient Patient { get; private set; }
+    public class Prescription : BaseEntity,ISubject
+    {   [NotMapped]
+        private readonly List<IObserver> _observers = new List<IObserver>();
+        [NotMapped]
+        public int Identifiant { get; set; }
+        public string? Medicament { get; set; }
+        public int Dosage { get; set; }
+        public string? Instructions { get; set; }
+        public TimeSpan Duree { get; set; }
+        public EtatPrescription Etat { get; set; }
+        public Consultation? Consultation { get; set; }
+        public Patient Patient { get; set; }
+        public int ConsultationId { get; set; }
 
         public Prescription()
         {
-            Etat = EtatPrescription.Active;
         }   
 
         public Prescription(string medicament, int dosage, 
-            string instructions, TimeSpan duree, EtatPrescription etat, Consultation consultation)
+            string instructions, TimeSpan duree, Consultation consultation)
         {
             Medicament = medicament;
             Dosage = dosage;
             Instructions = instructions;
             Duree = duree;
-            Etat = etat;
+            Etat = EtatPrescription.Active;
             Consultation = consultation;
         }
 
-        public void ChangerEtat(EtatPrescription nouvelEtat)
+        public void changerEtatPrescription()
         {
-            Etat = nouvelEtat;
+            Etat = EtatPrescription.Terminee;
             Notify();
         }
 
-        public bool EstActive()
-        {
-            return Etat == EtatPrescription.Active;
-        }
-
-        public void AjouterConsultation(Consultation consultation)
-        {
-            Consultation = consultation;
-        }
-
-        public void RetirerConsultation(Consultation consultation)
-        {
-            Consultation = null;
-        }
-
-        
 
         public void Attach(IObserver observer)
         {
@@ -84,17 +60,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
             }
         }
 
-        public void DefinirPeriode(DateTime dateDebut, DateTime dateFin)
-        {
-            if (dateFin <= dateDebut)
-            {
-                throw new ArgumentException("La date de fin doit être postérieure à la date de début");
-            }
-
-            DateDebut = dateDebut;
-            DateFin = dateFin;
-            Duree = dateFin - dateDebut;
-        }
+        
     }
 
 } 

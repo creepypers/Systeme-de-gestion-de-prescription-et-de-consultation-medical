@@ -1,73 +1,169 @@
 using SystèmeGestionConsultationPrescriptions.Core.Entities;
 using SystèmeGestionConsultationPrescriptions.Core.Interfaces;
-using SystèmeGestionConsultationPrescriptions.SharedKernel.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Transactions;
+using System.Linq;
 
 namespace SystèmeGestionConsultationPrescriptions.Core.Services
 {
     public class ConsultationService : IConsultationService
     {
         private readonly IConsultationRepository _consultationRepository;
-        private readonly IAsyncRepository<Prescription> _prescriptionRepository;
+        private readonly IDossierMedicalRepository _dossierMedicalRepository;
 
-        public ConsultationService(IConsultationRepository consultationRepository, IPrescriptionRepository prescriptionRepository)
+        public ConsultationService(
+            IConsultationRepository consultationRepository,
+            IDossierMedicalRepository dossierMedicalRepository)
         {
-            _consultationRepository = consultationRepository;
-            _prescriptionRepository = prescriptionRepository;
+            _consultationRepository = consultationRepository ?? throw new ArgumentNullException(nameof(consultationRepository));
+            _dossierMedicalRepository = dossierMedicalRepository ?? throw new ArgumentNullException(nameof(dossierMedicalRepository));
         }
 
-        public async Task AddConsultation(Consultation consultation)
+        // Opérations asynchrones
+        public async Task AddConsultationAsync(Consultation consultation)
         {
+            if (consultation == null)
+                throw new ArgumentNullException(nameof(consultation));
+
+            var dossierMedical = await _dossierMedicalRepository.GetByIdAsync(consultation.DossierMedicalId);
+            if (dossierMedical == null)
+                throw new InvalidOperationException($"Le dossier médical avec l'ID {consultation.DossierMedicalId} n'existe pas.");
+
             await _consultationRepository.AddAsync(consultation);
         }
 
-        public async Task AddPrescription(int idConsultation, Prescription prescription)
+        public async Task<Consultation> GetConsultationByIdAsync(int idConsultation)
         {
-            Consultation consultation = await _consultationRepository.GetByIdWithPrescriptionsAsync(idConsultation);
-            if (consultation != null)
-            {
-                consultation.AjouterPrescription(prescription);
-                await _consultationRepository.UpdateAsync(consultation);
-
-            }
+            return await _consultationRepository.GetByIdAsync(idConsultation);
         }
 
-        public async Task DeleteConsultation(Consultation consultation)
+        public async Task UpdateConsultationAsync(Consultation consultation)
         {
-            await _consultationRepository.DeleteAsync(consultation);
-        }
+            if (consultation == null)
+                throw new ArgumentNullException(nameof(consultation));
 
-        public async Task<Consultation> GetConsultation(int idConsultation)
-        { 
-            return await _consultationRepository.GetByIdWithPrescriptionsAsync(idConsultation);
-        }
-
-        public async Task GetPrescription(int idConsultation, Prescription prescription)
-        {
-            await _prescriptionRepository.GetByIdAsync(prescription.Id);
-        }
-
-        public async Task UpdateConsultation(Consultation consultation)
-        {
             await _consultationRepository.UpdateAsync(consultation);
         }
 
-        public async Task UpdatePrescription(int idConsultation, Prescription prescription)
+        public async Task DeleteConsultationAsync(Consultation consultation)
         {
-            Consultation consultation = await _consultationRepository.GetByIdAsync(idConsultation);
-            if (consultation == null) return;
-            Prescription? p = consultation._prescriptions?.FirstOrDefault(x => x.Id == prescription.Id);
-            if (p != null)
+            if (consultation == null)
+                throw new ArgumentNullException(nameof(consultation));
+                
+            await _consultationRepository.DeleteAsync(consultation);
+        }
+
+
+ 
+
+        // Opérations synchrones
+        public Consultation AddConsultation(Consultation consultation)
+        {
+            if (consultation == null)
+                throw new ArgumentNullException(nameof(consultation));
+
+            var dossierMedical = _dossierMedicalRepository.GetById(consultation.DossierMedicalId);
+            if (dossierMedical == null)
+                throw new InvalidOperationException($"Le dossier médical avec l'ID {consultation.DossierMedicalId} n'existe pas.");
+
+            return _consultationRepository.Add(consultation);
+        }
+
+        public Consultation GetConsultationById(int idConsultation)
+        {
+            return _consultationRepository.GetById(idConsultation);
+        }
+
+        public int UpdateConsultation(Consultation consultation)
+        {
+            if (consultation == null)
+                throw new ArgumentNullException(nameof(consultation));
+
+            _consultationRepository.Update(consultation);
+            return consultation.Id;
+        }
+
+        public int DeleteConsultation(Consultation consultation)
+        {
+            if (consultation == null)
+                throw new ArgumentNullException(nameof(consultation));
+                
+            _consultationRepository.Delete(consultation);
+            return consultation.Id;
+        }
+
+ 
+
+ 
+
+        public async Task AddPrescriptionAsync(int consultationId, Prescription prescription)
+        {
+            var consultation = await _consultationRepository.GetByIdAsync(consultationId);
+            if (consultation == null)
+                throw new InvalidOperationException($"La consultation avec l'ID {consultationId} n'existe pas.");
+                
+            consultation.Prescriptions.Add(prescription);
+            await _consultationRepository.UpdateAsync(consultation);
+        }
+
+        public async Task UpdatePrescriptionAsync(int consultationId, Prescription prescription)
+        {
+            var consultation = await _consultationRepository.GetByIdAsync(consultationId);
+            if (consultation == null)
+                throw new InvalidOperationException($"La consultation avec l'ID {consultationId} n'existe pas.");
+                
+            // Mettre à jour la prescription existante
+            await _consultationRepository.UpdateAsync(consultation);
+        }
+
+        public List<Consultation> GetConsultations(bool includeInactive = false)
+        {
+            return _consultationRepository.ListAll().ToList();
+        }
+
+        public async Task<Consultation> GetByIdWithPrescriptionsAsync(int id)
+        {
+            return await _consultationRepository.GetByIdWithPrescriptionsAsync(id);
+        }
+
+        public Consultation GetByIdWithPrescriptions(int id)
+        {
+            return _consultationRepository.GetByIdWithPrescriptions(id);
+        }
+
+        public async Task<Consultation> GetByIdWithDossierMedicalAsync(DossierMedical dossierMedical)
+        {
+            return await _consultationRepository.GetByIdWithDossierMedicalAsync(dossierMedical);
+        }
+
+        public Consultation GetByIdWithDossierMedical(DossierMedical dossierMedical)
+        {
+            return _consultationRepository.GetByIdWithDossierMedical(dossierMedical);
+        }
+
+        public async Task<Consultation> GetByIdWithSessionAsync(Session session)
+        {
+            return await _consultationRepository.GetByIdWithSessionAsync(session);
+        }
+
+        public Consultation GetByIdWithSession(Session session)
+        {
+            return _consultationRepository.GetByIdWithSession(session);
+        }
+
+        public async Task ChangerEtatPrescriptionAsync(int idConsultation, int idPrescription)
+        {
+            var consultation = await _consultationRepository.GetByIdWithPrescriptionsAsync(idConsultation);
+            if (consultation != null)
             {
-                consultation.SupprimerPrescription(p);
+                var prescription = consultation.Prescriptions.FirstOrDefault(p => p.Id == idPrescription);
+                if (prescription != null)
+                {
+                    prescription.changerEtatPrescription();
+                    await _consultationRepository.UpdateAsync(consultation);
+                }
             }
-            consultation._prescriptions?.Add(prescription);
-            await _consultationRepository.UpdateAsync(consultation);  
         }
     }
 }

@@ -12,5 +12,12 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
     {
         Task<Patient> GetByIdWithDossiersMedicauxAsync(int id);
         Patient GetByIdWithDossiersMedicaux(int id);
+
+        Task<Patient> GetByIdWithMedecinAsync(int id);
+        Patient GetByIdWithMedecin(int id);
+
+        
+
+
     }
 }

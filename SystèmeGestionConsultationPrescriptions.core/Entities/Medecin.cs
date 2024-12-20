@@ -8,15 +8,17 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
     public class Medecin : Utilisateur, IAggregateRoot
     {
         [NotMapped]
-        public int? IdMedecin   { get; private set; }
-        public string? NumeroLicence { get; private set; }
-        public string? Nom { get; private set; }
-        public string? Prenom { get; private set; }
-        public string? Adresse { get; private set; }
-        public string? NumeroTelephone { get; private set; }
-        public string? AdresseCourriel { get; private set; }
+        public int? IdMedecin   { get; set; }
+        public string? NumeroLicence { get; set; }
+        public string? Nom { get; set; }
+        public string? Prenom { get; set; }
+        public string? Adresse { get; set; }
+        public string? NumeroTelephone { get; set; }
+        public string? AdresseCourriel { get; set; }
         
-        public List<Patient> Patients { get; private set; } = new List<Patient>();
+        public  ICollection<Patient> Patients { get; set; } = new List<Patient>();
+        public  ICollection<Session> Sessions { get; set; } = new List<Session>();
+
         public void AjouterPatient(Patient patient)
         {
             Patients.Add(patient);
@@ -26,6 +28,18 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
         {
             Patients.Remove(patient);
         }
+
+        public void AjouterSession(Session session)
+        {
+            Sessions.Add(session);
+        }
+
+        public void RetirerSession(Session session)
+        {
+            Sessions.Remove(session);
+        }
+
+        
 
         public Medecin(
             string nomUtilisateur, 
@@ -49,9 +63,10 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
         {
         }
 
-        public override bool Valider(string numeroLicence, string motDePasse)
+        public override bool Valider(string nomUtilisateur, string motDePasse)
         {
-            return this.NumeroLicence == numeroLicence && this.MotDePasse == motDePasse;
+            return !string.IsNullOrEmpty(NomUtilisateur) && !string.IsNullOrEmpty(MotDePasse);
+            
         }
 
        

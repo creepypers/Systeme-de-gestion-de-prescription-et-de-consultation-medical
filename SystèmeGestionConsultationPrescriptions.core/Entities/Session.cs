@@ -6,15 +6,19 @@ using SystèmeGestionConsultationPrescriptions.Core.Interfaces;
 
 namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 {
-    public class Session : BaseEntity
+    public class Session : BaseEntity, IAggregateRoot
     {
        
-        public DateTime? DateConnexion { get; private set; }
-        public DateTime? DateDeconnexion { get; private set; }
+        public DateTime? DateConnexion { get;  set; }
+        public DateTime? DateDeconnexion { get;  set; }
 
-        // Relation avec les consultations
-        [NotMapped]
-        public virtual List<Consultation> _consultations { get; set; } = new List<Consultation>();
+        // Relation many-to-one avec Medecin
+        public int MedecinId { get; set; }
+        public  Medecin Medecin { get; set; }
+
+        // Relation one-to-many avec Consultation
+        public virtual ICollection<Consultation> Consultations { get; set; } = new List<Consultation>();
+        public virtual ICollection<DossierMedical> DossierMedicals { get; set; } = new List<DossierMedical>();
 
         public Session()
         {
@@ -31,12 +35,47 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 
         public void AjouterConsultation(Consultation consultation)
         {
-            _consultations.Add(consultation);
+            Consultations.Add(consultation);
         }
 
-        public void RetirerConsultation(Consultation consultation)
+
+        public void AjouterDossierMedical(DossierMedical dossierMedical)
         {
-            _consultations.Remove(consultation);
+            DossierMedicals.Add(dossierMedical);
+        }
+
+        public void RetirerDossierMedical(DossierMedical dossierMedical)
+        {
+            DossierMedicals.Remove(dossierMedical);
+        }
+
+        public void AfficherFormulaireAuthentification()
+        {
+            // Cette méthode sera implémentée dans la couche UI
+        }
+
+        public bool ValiderAuthentification(string nomUtilisateur, string motDePasse)
+        {
+            if (Medecin != null)
+            {
+                return Medecin.Valider(nomUtilisateur, motDePasse);
+            }
+            return false;
+        }
+
+        public void AfficherMessageErreur(string message)
+        {
+            // Cette méthode sera implémentée dans la couche UI
+        }
+
+        public void AfficherFormulaireAjoutFichePatient()
+        {
+            // Cette méthode sera implémentée dans la couche UI
+        }
+
+        public void ConfirmerAjoutPatient()
+        {
+            // Cette méthode sera implémentée dans la couche UI
         }
 
     }

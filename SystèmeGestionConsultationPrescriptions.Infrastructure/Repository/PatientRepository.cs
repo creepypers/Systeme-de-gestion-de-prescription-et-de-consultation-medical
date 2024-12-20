@@ -24,6 +24,22 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Repository
                 .FirstOrDefault(p => p.Id == id)!;
         }
 
+        public async Task<Patient> GetByIdWithMedecinAsync(int id)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.Patients
+                .Include(p => p.Medecin)
+                .FirstOrDefaultAsync(p => p.Id == id)!;
+        }
+
+        public Patient GetByIdWithMedecin(int id)
+        {
+            return _SystèmeGestionConsultationPrescriptionsContext.Patients
+                .Include(p => p.Medecin)
+                .FirstOrDefault(p => p.Id == id)!;
+        }
+
+        
+
        
     }
 } 
