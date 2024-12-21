@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v8.0": {
       "SystèmeGestionConsultationPrescriptions.ConsoleTestApp/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "SystèmeGestionConsultationPrescriptions.Infrastructure": "1.0.0",
           "SystèmeGestionConsultationPrescriptions.core": "1.0.0",

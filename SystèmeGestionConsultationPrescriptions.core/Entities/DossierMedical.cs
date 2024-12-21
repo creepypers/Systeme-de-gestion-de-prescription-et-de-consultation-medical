@@ -9,7 +9,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
     public class DossierMedical : BaseEntity, IAggregateRoot, IObserver
     {
         [NotMapped]
-        public int Identifiant { get; set; }
+        public int DossierMedicalId { get; set; }
         public DateTime DateCreation { get; set; }
 
         [NotMapped]
@@ -32,11 +32,14 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
         public  virtual List<Prescription> Prescriptions { get; set; } = new List<Prescription>();
 
         // Relation one-to-one avec Patient
+        public int PatientId { get; set; }
         public  Patient Patient { get; set; }
-        public int IdentifiantPatient { get; set; }
+        
 
 
         // Relation one-to-many avec Consultation
+        public int MedecinId { get; set; }
+        public virtual Medecin Medecin { get; set; }
 
         public void AjouterConsultation(Consultation consultation)
         {
@@ -91,11 +94,12 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
         {
         }
 
-        public DossierMedical(int identifiantPatient,DateTime dateCreation)
+        public DossierMedical(DateTime dateCreation, Patient patient, Medecin medecin)
         {
-            IdentifiantPatient = identifiantPatient;
-            DateCreation = dateCreation;
             
+            DateCreation = dateCreation;
+            Patient = patient;
+            Medecin = medecin;
         }
     }
 } 

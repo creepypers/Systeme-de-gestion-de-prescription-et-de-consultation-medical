@@ -9,6 +9,6 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Specifications
 {
     public class DossierMedicalByPatient : BaseSpecification<DossierMedical>
     {
-        public DossierMedicalByPatient(int patientId) : base(x => x.IdentifiantPatient == patientId){ }
+        public DossierMedicalByPatient(int patientId) : base(x => x.Patient.Id == patientId){ }
     }
 }

@@ -10,14 +10,13 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
     {   [NotMapped]
         private readonly List<IObserver> _observers = new List<IObserver>();
         [NotMapped]
-        public int Identifiant { get; set; }
+        public int PrescriptionId { get; set; }
         public string? Medicament { get; set; }
         public int Dosage { get; set; }
         public string? Instructions { get; set; }
         public TimeSpan Duree { get; set; }
         public EtatPrescription Etat { get; set; }
         public Consultation? Consultation { get; set; }
-        public Patient Patient { get; set; }
         public int ConsultationId { get; set; }
 
         public Prescription()

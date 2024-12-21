@@ -16,14 +16,14 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Repository
         public Task<DossierMedical> GetByPatientIdAsync(int id)
         {
             return _SystèmeGestionConsultationPrescriptionsContext.DossiersMedical
-                  .Include(c => c.IdentifiantPatient)
+                  .Include(c => c.Patient)
                   .FirstOrDefaultAsync(c => c.Id == id)!;
         }
 
         public DossierMedical GetByPatientId(int id)
         {
             return _SystèmeGestionConsultationPrescriptionsContext.DossiersMedical
-                   .Include(c => c.IdentifiantPatient)
+                   .Include(c => c.Patient)
                    .FirstOrDefault(c => c.Id == id)!;
         }
 

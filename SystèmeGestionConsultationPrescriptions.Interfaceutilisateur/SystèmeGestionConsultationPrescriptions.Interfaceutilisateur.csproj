@@ -226,6 +226,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SystèmeGestionConsultationPrescriptions.core\SystèmeGestionConsultationPrescriptions.core.csproj">
+      <Project>{869bc1ea-9464-4e9a-9ebe-36a7e25b2d7c}</Project>
+      <Name>SystèmeGestionConsultationPrescriptions.core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystèmeGestionConsultationPrescriptions.Infrastructure\SystèmeGestionConsultationPrescriptions.Infrastructure.csproj">
+      <Project>{22fb065a-b89c-4069-a71f-c5cd467b3575}</Project>
+      <Name>SystèmeGestionConsultationPrescriptions.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystèmeGestionConsultationPrescriptions.SharedKernel\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj">
+      <Project>{7cdfe96f-9d74-41b4-abcf-a83ad10d8153}</Project>
+      <Name>SystèmeGestionConsultationPrescriptions.SharedKernel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

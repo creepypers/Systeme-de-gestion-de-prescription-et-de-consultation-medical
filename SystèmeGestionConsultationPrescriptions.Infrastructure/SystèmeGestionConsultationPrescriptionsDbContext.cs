@@ -22,11 +22,65 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure
 
         
 
-        public SystèmeGestionConsultationPrescriptionsDBContext(DbContextOptions options) : base(options) { }
+        public SystèmeGestionConsultationPrescriptionsDBContext(DbContextOptions<SystèmeGestionConsultationPrescriptionsDBContext> options) : base(options) { }
 
         public SystèmeGestionConsultationPrescriptionsDBContext() : base(new DbContextOptionsBuilder<SystèmeGestionConsultationPrescriptionsDBContext>()
                     .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SystèmeGestionConsultationPrescriptionsDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False")
                     .Options)
-        { }
+        {
+            Database.EnsureCreated();
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder
+                    .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SystèmeGestionConsultationPrescriptionsDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Prescription>()
+                .HasOne(p => p.Consultation)
+                .WithMany(c => c.Prescriptions)
+                .HasForeignKey(p => p.ConsultationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Consultation>()
+                .HasOne(c => c.DossierMedical)
+                .WithMany(d => d.Consultations)
+                .HasForeignKey(c => c.DossierMedicalId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<DossierMedical>()
+                .HasOne(d => d.Patient)
+                .WithOne(p => p.DossierMedical)
+                .HasForeignKey<DossierMedical>(d => d.PatientId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Consultation>()
+                .HasOne(c => c.Session)
+                .WithMany(s => s.Consultations)
+                .HasForeignKey(c => c.SessionId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Patient>()
+                .HasOne(p => p.DossierMedical)
+                .WithOne(d => d.Patient)
+                .HasForeignKey<DossierMedical>(d => d.PatientId);
+
+                 modelBuilder.Entity<Prescription>()
+                    .Property(p => p.Duree)
+                    .HasConversion(
+                     v => v.ToString(),
+                     v => TimeSpan.Parse(v))
+                    .HasColumnType("nvarchar(48)");
+                
+        }
+
     }
 }

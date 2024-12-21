@@ -12,8 +12,8 @@ using SystèmeGestionConsultationPrescriptions.Infrastructure;
 namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
 {
     [DbContext(typeof(SystèmeGestionConsultationPrescriptionsDBContext))]
-    [Migration("20241219093640_v2")]
-    partial class v2
+    [Migration("20241221185019_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,9 +43,6 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
                     b.Property<int>("DossierMedicalId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MedecinId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Motif")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -54,11 +51,14 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("SessionId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DossierMedicalId");
 
-                    b.HasIndex("MedecinId");
+                    b.HasIndex("SessionId");
 
                     b.ToTable("Consultations");
                 });
@@ -74,7 +74,13 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
                     b.Property<DateTime>("DateCreation")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdentifiantPatient")
+                    b.Property<int>("MedecinId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SessionId")
                         .HasColumnType("int");
 
                     b.Property<string>("TraitementsPassesString")
@@ -82,6 +88,13 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MedecinId");
+
+                    b.HasIndex("PatientId")
+                        .IsUnique();
+
+                    b.HasIndex("SessionId");
 
                     b.ToTable("DossiersMedical");
                 });
@@ -145,9 +158,6 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
                     b.Property<DateTime?>("DateNaissance")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("DossierMedicalId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("MedecinId")
                         .HasColumnType("int");
 
@@ -158,8 +168,6 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DossierMedicalId");
 
                     b.HasIndex("MedecinId");
 
@@ -174,14 +182,8 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("ConsultationId")
+                    b.Property<int>("ConsultationId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DateDebut")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DateFin")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("Dosage")
                         .HasColumnType("int");
@@ -189,8 +191,9 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
                     b.Property<int?>("DossierMedicalId")
                         .HasColumnType("int");
 
-                    b.Property<TimeSpan>("Duree")
-                        .HasColumnType("time");
+                    b.Property<string>("Duree")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(48)");
 
                     b.Property<int>("Etat")
                         .HasColumnType("int");
@@ -229,7 +232,12 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
                     b.Property<DateTime?>("DateDeconnexion")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("MedecinId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("MedecinId");
 
                     b.ToTable("Sessions");
                 });
@@ -237,33 +245,50 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
             modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.Consultation", b =>
                 {
                     b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.DossierMedical", "DossierMedical")
-                        .WithMany("consultations")
+                        .WithMany("Consultations")
                         .HasForeignKey("DossierMedicalId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.Session", "Session")
+                        .WithMany("Consultations")
+                        .HasForeignKey("SessionId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("DossierMedical");
+
+                    b.Navigation("Session");
+                });
+
+            modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.DossierMedical", b =>
+                {
                     b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.Medecin", "Medecin")
                         .WithMany()
                         .HasForeignKey("MedecinId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("DossierMedical");
+                    b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.Patient", "Patient")
+                        .WithOne("DossierMedical")
+                        .HasForeignKey("SystèmeGestionConsultationPrescriptions.Core.Entities.DossierMedical", "PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.Session", null)
+                        .WithMany("DossierMedicals")
+                        .HasForeignKey("SessionId");
 
                     b.Navigation("Medecin");
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.Patient", b =>
                 {
-                    b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.DossierMedical", "DossierMedical")
-                        .WithMany()
-                        .HasForeignKey("DossierMedicalId");
-
                     b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.Medecin", "Medecin")
                         .WithMany("Patients")
                         .HasForeignKey("MedecinId");
-
-                    b.Navigation("DossierMedical");
 
                     b.Navigation("Medecin");
                 });
@@ -271,11 +296,13 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
             modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.Prescription", b =>
                 {
                     b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.Consultation", "Consultation")
-                        .WithMany("_prescriptions")
-                        .HasForeignKey("ConsultationId");
+                        .WithMany("Prescriptions")
+                        .HasForeignKey("ConsultationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.DossierMedical", null)
-                        .WithMany("traitementActifs")
+                        .WithMany("Prescriptions")
                         .HasForeignKey("DossierMedicalId");
 
                     b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.Patient", "Patient")
@@ -289,21 +316,46 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Migrations
                     b.Navigation("Patient");
                 });
 
+            modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.Session", b =>
+                {
+                    b.HasOne("SystèmeGestionConsultationPrescriptions.Core.Entities.Medecin", "Medecin")
+                        .WithMany("Sessions")
+                        .HasForeignKey("MedecinId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Medecin");
+                });
+
             modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.Consultation", b =>
                 {
-                    b.Navigation("_prescriptions");
+                    b.Navigation("Prescriptions");
                 });
 
             modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.DossierMedical", b =>
                 {
-                    b.Navigation("consultations");
+                    b.Navigation("Consultations");
 
-                    b.Navigation("traitementActifs");
+                    b.Navigation("Prescriptions");
                 });
 
             modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.Medecin", b =>
                 {
                     b.Navigation("Patients");
+
+                    b.Navigation("Sessions");
+                });
+
+            modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.Patient", b =>
+                {
+                    b.Navigation("DossierMedical");
+                });
+
+            modelBuilder.Entity("SystèmeGestionConsultationPrescriptions.Core.Entities.Session", b =>
+                {
+                    b.Navigation("Consultations");
+
+                    b.Navigation("DossierMedicals");
                 });
 #pragma warning restore 612, 618
         }

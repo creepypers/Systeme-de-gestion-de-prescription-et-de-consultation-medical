@@ -11,13 +11,15 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Services
     {
         private readonly IConsultationRepository _consultationRepository;
         private readonly IDossierMedicalRepository _dossierMedicalRepository;
-
+        private readonly ISessionRepository _sessionRepository;
         public ConsultationService(
             IConsultationRepository consultationRepository,
-            IDossierMedicalRepository dossierMedicalRepository)
+            IDossierMedicalRepository dossierMedicalRepository,
+            ISessionRepository sessionRepository)
         {
             _consultationRepository = consultationRepository ?? throw new ArgumentNullException(nameof(consultationRepository));
             _dossierMedicalRepository = dossierMedicalRepository ?? throw new ArgumentNullException(nameof(dossierMedicalRepository));
+            _sessionRepository = sessionRepository ?? throw new ArgumentNullException(nameof(sessionRepository));
         }
 
         // Opérations asynchrones

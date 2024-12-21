@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionConsultationsEtPrescriptions.Core.Services
+namespace SystèmeGestionConsultationPrescriptions.Core.Services
 {
     public class SessionService : ISessionService
     {

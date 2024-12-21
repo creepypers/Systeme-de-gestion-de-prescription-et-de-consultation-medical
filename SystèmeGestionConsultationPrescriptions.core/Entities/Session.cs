@@ -8,17 +8,15 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 {
     public class Session : BaseEntity, IAggregateRoot
     {
-       
+        [NotMapped]
+       public int SessionId { get; set; }
         public DateTime? DateConnexion { get;  set; }
         public DateTime? DateDeconnexion { get;  set; }
-
-        // Relation many-to-one avec Medecin
-        public int MedecinId { get; set; }
         public  Medecin Medecin { get; set; }
-
-        // Relation one-to-many avec Consultation
-        public virtual ICollection<Consultation> Consultations { get; set; } = new List<Consultation>();
-        public virtual ICollection<DossierMedical> DossierMedicals { get; set; } = new List<DossierMedical>();
+        public int MedecinId { get; set; }
+        
+        public virtual List<Consultation> Consultations { get; set; } = new List<Consultation>();
+        public virtual List<DossierMedical> DossierMedicals { get; set; } = new List<DossierMedical>();
 
         public Session()
         {
@@ -26,10 +24,11 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
         }
 
         
-       public Session(DateTime dateConnexion ,DateTime dateDeconnexion)
-       {
-            DateConnexion = dateConnexion;
-            DateDeconnexion = dateDeconnexion;
+       public Session(DateTime dateConnexion ,DateTime dateDeconnexion, Medecin medecin)
+            {
+                    DateConnexion = dateConnexion;
+                    DateDeconnexion = dateDeconnexion;
+                    Medecin = medecin;
 
        }
 

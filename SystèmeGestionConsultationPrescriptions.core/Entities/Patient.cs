@@ -7,10 +7,9 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 {
     public class Patient : BaseEntity, IAggregateRoot
     {
-        public List<IObserver> _observers = new List<IObserver>();
 
         [NotMapped]
-        public int Identifiant { get; set; }
+        public int PatientId { get; set; }
         public string? Nom { get; set; }
         public DateTime? DateNaissance { get; set; }
         public string? Adresse { get; set; }
@@ -23,7 +22,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
         public  DossierMedical?   DossierMedical { get; set; }
 
         public Patient(string nom, DateTime dateNaissance, 
-            string adresse, string numeroTelephone, string adresseCourriel, Medecin medecin, DossierMedical dossierMedical)
+            string adresse, string numeroTelephone, string adresseCourriel, Medecin medecin)
         {
             Nom = nom;
             DateNaissance = dateNaissance;
@@ -31,7 +30,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
             NumeroTelephone = numeroTelephone;
             AdresseCourriel = adresseCourriel;
             Medecin = medecin;
-            DossierMedical = dossierMedical;
+            
         }
         public Patient() {
     

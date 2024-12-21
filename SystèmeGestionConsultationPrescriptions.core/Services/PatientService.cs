@@ -56,12 +56,13 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Services
             }
         }
 
-        public async Task CreerDossierMedicalAsync(int idPatient)
+        public async Task CreerDossierMedicalAsync(int idPatient, int idMedecin)
         {
             var patient = await _patientRepository.GetByIdAsync(idPatient);
-            if (patient != null)
+            var medecin = await _medecinRepository.GetByIdAsync(idMedecin);
+            if (patient != null && medecin != null)
             {
-                var dossierMedical = new DossierMedical(idPatient, DateTime.Now);
+                var dossierMedical = new DossierMedical(DateTime.Now, patient, medecin);
                 await _dossierMedicalRepository.AddAsync(dossierMedical);
                 patient.DossierMedical = dossierMedical;
                 await _patientRepository.UpdateAsync(patient);
@@ -102,12 +103,13 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Services
             }
         }
 
-        public void CreerDossierMedical(int idPatient)
+        public void CreerDossierMedical(int idPatient, int idMedecin)
         {
             var patient = _patientRepository.GetById(idPatient);
+            var medecin = _medecinRepository.GetById(idMedecin);
             if (patient != null)
             {
-                var dossierMedical = new DossierMedical(idPatient, DateTime.Now);
+                var dossierMedical = new DossierMedical(DateTime.Now, patient, medecin);
                 _dossierMedicalRepository.Add(dossierMedical);
                 patient.DossierMedical = dossierMedical;
                 _patientRepository.Update(patient);

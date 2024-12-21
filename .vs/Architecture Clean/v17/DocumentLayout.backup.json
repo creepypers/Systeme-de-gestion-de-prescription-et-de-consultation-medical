@@ -1,7 +1,40 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A065F0D-65C1-43B2-ABB4-28597727DA91}|Syst\u00E8meGestionConsultationPrescriptions.ConsoleTestApp\\Syst\u00E8meGestionConsultationPrescriptions.ConsoleTestApp.csproj|c:\\users\\elida\\downloads\\architecture clean\\architecture clean\\syst\u00E8megestionconsultationprescriptions.consoletestapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A065F0D-65C1-43B2-ABB4-28597727DA91}|Syst\u00E8meGestionConsultationPrescriptions.ConsoleTestApp\\Syst\u00E8meGestionConsultationPrescriptions.ConsoleTestApp.csproj|solutionrelative:syst\u00E8megestionconsultationprescriptions.consoletestapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|c:\\users\\elida\\downloads\\architecture clean\\architecture clean\\syst\u00E8megestionconsultationprescriptions.core\\entities\\prescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|solutionrelative:syst\u00E8megestionconsultationprescriptions.core\\entities\\prescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|c:\\users\\elida\\downloads\\architecture clean\\architecture clean\\syst\u00E8megestionconsultationprescriptions.core\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|solutionrelative:syst\u00E8megestionconsultationprescriptions.core\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22FB065A-B89C-4069-A71F-C5CD467B3575}|Syst\u00E8meGestionConsultationPrescriptions.Infrastructure\\Syst\u00E8meGestionConsultationPrescriptions.Infrastructure.csproj|c:\\users\\elida\\downloads\\architecture clean\\architecture clean\\syst\u00E8megestionconsultationprescriptions.infrastructure\\repository\\dossiermedicalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22FB065A-B89C-4069-A71F-C5CD467B3575}|Syst\u00E8meGestionConsultationPrescriptions.Infrastructure\\Syst\u00E8meGestionConsultationPrescriptions.Infrastructure.csproj|solutionrelative:syst\u00E8megestionconsultationprescriptions.infrastructure\\repository\\dossiermedicalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|c:\\users\\elida\\downloads\\architecture clean\\architecture clean\\syst\u00E8megestionconsultationprescriptions.core\\specifications\\consultationbypatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|solutionrelative:syst\u00E8megestionconsultationprescriptions.core\\specifications\\consultationbypatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|c:\\users\\elida\\downloads\\architecture clean\\architecture clean\\syst\u00E8megestionconsultationprescriptions.core\\specifications\\dossiermedicalbypatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|solutionrelative:syst\u00E8megestionconsultationprescriptions.core\\specifications\\dossiermedicalbypatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|c:\\users\\elida\\downloads\\architecture clean\\architecture clean\\syst\u00E8megestionconsultationprescriptions.core\\services\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|solutionrelative:syst\u00E8megestionconsultationprescriptions.core\\services\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|c:\\users\\elida\\downloads\\architecture clean\\architecture clean\\syst\u00E8megestionconsultationprescriptions.core\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{869BC1EA-9464-4E9A-9EBE-36A7E25B2D7C}|Syst\u00E8meGestionConsultationPrescriptions.core\\Syst\u00E8meGestionConsultationPrescriptions.core.csproj|solutionrelative:syst\u00E8megestionconsultationprescriptions.core\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +51,110 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Prescription.cs",
+              "DocumentMoniker": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Entities\\Prescription.cs",
+              "RelativeDocumentMoniker": "Syst\u00E8meGestionConsultationPrescriptions.core\\Entities\\Prescription.cs",
+              "ToolTip": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Entities\\Prescription.cs",
+              "RelativeToolTip": "Syst\u00E8meGestionConsultationPrescriptions.core\\Entities\\Prescription.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAUwA4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T19:21:56.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Entities\\Patient.cs",
+              "RelativeDocumentMoniker": "Syst\u00E8meGestionConsultationPrescriptions.core\\Entities\\Patient.cs",
+              "ToolTip": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Entities\\Patient.cs",
+              "RelativeToolTip": "Syst\u00E8meGestionConsultationPrescriptions.core\\Entities\\Patient.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA7wA8AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T17:44:21.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DossierMedicalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.Infrastructure\\Repository\\DossierMedicalRepository.cs",
+              "RelativeDocumentMoniker": "Syst\u00E8meGestionConsultationPrescriptions.Infrastructure\\Repository\\DossierMedicalRepository.cs",
+              "ToolTip": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.Infrastructure\\Repository\\DossierMedicalRepository.cs",
+              "RelativeToolTip": "Syst\u00E8meGestionConsultationPrescriptions.Infrastructure\\Repository\\DossierMedicalRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T17:36:17.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DossierMedicalByPatient.cs",
+              "DocumentMoniker": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Specifications\\DossierMedicalByPatient.cs",
+              "RelativeDocumentMoniker": "Syst\u00E8meGestionConsultationPrescriptions.core\\Specifications\\DossierMedicalByPatient.cs",
+              "ToolTip": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Specifications\\DossierMedicalByPatient.cs",
+              "RelativeToolTip": "Syst\u00E8meGestionConsultationPrescriptions.core\\Specifications\\DossierMedicalByPatient.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAjwAsAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T17:30:34.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConsultationByPatient.cs",
+              "DocumentMoniker": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Specifications\\ConsultationByPatient.cs",
+              "RelativeDocumentMoniker": "Syst\u00E8meGestionConsultationPrescriptions.core\\Specifications\\ConsultationByPatient.cs",
+              "ToolTip": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Specifications\\ConsultationByPatient.cs",
+              "RelativeToolTip": "Syst\u00E8meGestionConsultationPrescriptions.core\\Specifications\\ConsultationByPatient.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAjwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T17:30:29.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PatientService.cs",
+              "DocumentMoniker": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Services\\PatientService.cs",
+              "RelativeDocumentMoniker": "Syst\u00E8meGestionConsultationPrescriptions.core\\Services\\PatientService.cs",
+              "ToolTip": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Services\\PatientService.cs",
+              "RelativeToolTip": "Syst\u00E8meGestionConsultationPrescriptions.core\\Services\\PatientService.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAmwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T17:29:28.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SessionService.cs",
+              "DocumentMoniker": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Services\\SessionService.cs",
+              "RelativeDocumentMoniker": "Syst\u00E8meGestionConsultationPrescriptions.core\\Services\\SessionService.cs",
+              "ToolTip": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.core\\Services\\SessionService.cs",
+              "RelativeToolTip": "Syst\u00E8meGestionConsultationPrescriptions.core\\Services\\SessionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T17:29:27.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.ConsoleTestApp\\Program.cs",
+              "RelativeDocumentMoniker": "Syst\u00E8meGestionConsultationPrescriptions.ConsoleTestApp\\Program.cs",
+              "ToolTip": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\Syst\u00E8meGestionConsultationPrescriptions.ConsoleTestApp\\Program.cs",
+              "RelativeToolTip": "Syst\u00E8meGestionConsultationPrescriptions.ConsoleTestApp\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAqwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:57:06.894Z",
+              "EditorCaption": ""
             }
           ]
         }

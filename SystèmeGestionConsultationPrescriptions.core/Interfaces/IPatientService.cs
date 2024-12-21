@@ -13,7 +13,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
         Task<Patient> GetPatientByIdAsync(int idPatient);
         Task DeletePatientAsync(Patient patient);
         Task AssignerMedecinAsync(int idPatient, int idMedecin);
-        Task CreerDossierMedicalAsync(int idPatient);
+        Task CreerDossierMedicalAsync(int idPatient, int idMedecin);
         
         // Sync operations
         Patient AddPatient(Patient patient);
@@ -21,11 +21,11 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
         Patient GetPatientById(int idPatient);
         int DeletePatient(Patient patient);
         void AssignerMedecin(int idPatient, int idMedecin);
-        void CreerDossierMedical(int idPatient);
+        void CreerDossierMedical(int idPatient, int idMedecin);
         
         // Query operations
-         Task<Patient> GetByIdWithDossiersMedicauxAsync(int id);
-        Patient GetByIdWithDossiersMedicaux(int id);
+         Task<Patient> GetByIdWithDossiersMedicauxAsync(int idPatient   );
+        Patient GetByIdWithDossiersMedicaux(int idPatient);
 
         Task<Patient> GetByIdWithMedecinAsync(int id);
         Patient GetByIdWithMedecin(int id);

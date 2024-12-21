@@ -8,7 +8,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
     public class Medecin : Utilisateur, IAggregateRoot
     {
         [NotMapped]
-        public int? IdMedecin   { get; set; }
+        public int? MedecinId   { get; set; }
         public string? NumeroLicence { get; set; }
         public string? Nom { get; set; }
         public string? Prenom { get; set; }
@@ -16,8 +16,8 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
         public string? NumeroTelephone { get; set; }
         public string? AdresseCourriel { get; set; }
         
-        public  ICollection<Patient> Patients { get; set; } = new List<Patient>();
-        public  ICollection<Session> Sessions { get; set; } = new List<Session>();
+        public virtual ICollection<Patient> Patients { get; set; } = new List<Patient>();
+        public virtual ICollection<Session> Sessions { get; set; } = new List<Session>();
 
         public void AjouterPatient(Patient patient)
         {
@@ -57,6 +57,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
             Adresse = adresse;
             NumeroTelephone = numeroTelephone;
             AdresseCourriel = adresseCourriel;
+
         }
 
         public Medecin() : base(string.Empty, string.Empty)

@@ -7,7 +7,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
 {
     public class Consultation : BaseEntity, IAggregateRoot    {
         [NotMapped]
-        public int Identifiant { get; set; }
+        public int ConsultationId { get; set; }
         public DateTime Date { get; set; }
         public string Motif { get; set; }
         public string Observations { get; set; }
@@ -25,12 +25,14 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
         public virtual ICollection<Prescription> Prescriptions { get; set; } = new List<Prescription>();
 
         public Consultation(DateTime date, string motif, 
-            string observations, string diagnostic)
+            string observations, string diagnostic, DossierMedical dossierMedical, Session session)
         {
             Date = date;
             Motif = motif;
             Observations = observations;
             Diagnostic = diagnostic;
+            DossierMedical = dossierMedical;
+            Session = session;
         }
         public Consultation()
         {

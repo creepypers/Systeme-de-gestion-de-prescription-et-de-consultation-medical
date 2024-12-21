@@ -1,0 +1,6 @@
+<Project>
+    <ItemGroup>
+        <ProjectReference Include="..\SystèmeGestionConsultationPrescriptions.Core\SystèmeGestionConsultationPrescriptions.Core.csproj" />
+        <ProjectReference Include="..\SystèmeGestionConsultationPrescriptions.SharedKernel\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj" />
+    </ItemGroup>
+</Project>
