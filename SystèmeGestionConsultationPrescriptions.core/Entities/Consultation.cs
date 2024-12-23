@@ -44,6 +44,15 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Entities
             Prescriptions.Add(prescription);
         }
 
+        public void ChangerEtat(int prescriptionId)
+        {
+            var prescription = Prescriptions.FirstOrDefault(p => p.Id == prescriptionId);
+            if (prescription != null)
+            {
+                prescription.changerEtatPrescription();
+            }
+        }
+
 
         
     }

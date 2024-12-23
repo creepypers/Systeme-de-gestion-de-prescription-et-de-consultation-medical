@@ -38,6 +38,23 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Repository
                 .FirstOrDefault(p => p.Id == id)!;
         }
 
+        public async Task<IEnumerable<Patient>> GetPatientsByMedecinIdAsync(int medecinId)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.Patients
+                .Where(p => p.MedecinId == medecinId)
+                .ToListAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var patient = await _SystèmeGestionConsultationPrescriptionsContext.Patients.FindAsync(id);
+            if (patient != null)
+            {
+                _SystèmeGestionConsultationPrescriptionsContext.Patients.Remove(patient);
+                await _SystèmeGestionConsultationPrescriptionsContext.SaveChangesAsync();
+            }
+        }
+
         
 
        

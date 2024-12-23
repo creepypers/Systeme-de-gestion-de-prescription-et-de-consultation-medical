@@ -12,7 +12,6 @@ using SystèmeGestionConsultationPrescriptions.Core.Entities;
 using SystèmeGestionConsultationPrescriptions.Core.Specifications;
 using SystèmeGestionConsultationPrescriptions.Core.Services;
 using SystèmeGestionConsultationPrescriptions.Infrastructure;
-using SystèmeGestionConsultationPrescriptions.ConsoleTestApp.ServiceTests;
 
 
     
@@ -24,27 +23,27 @@ using SystèmeGestionConsultationPrescriptions.ConsoleTestApp.ServiceTests;
         //await Test1();
         
         // Test 2: Création d'un patient
-        //await Test2();
+        await Test2();
         
         //// Test 3: Association médecin-patient
-        //await Test3();
+        await Test3();
 
         //// Test 4: Création d'une consultation
-        //await Test4();
+        await Test4();
 
         //// Test 5: Création d'une prescription
-        //await Test5();
+        await Test5();
 
         //// Test 6: Recherche historique des consultations
-        //await Test6();
+        await Test6();
 
         //// Test 7: Test des services de consultation
-        //await Test7();
+        await Test7();
 
         //// Test 8: Test des services de prescription
         await Test8();
 
-        await ConsultationServiceTests.ExecuterTests();
+        //await ConsultationServiceTests.ExecuterTests();
 
         Console.WriteLine("Appuyez sur une touche pour terminer...");
         Console.ReadKey();

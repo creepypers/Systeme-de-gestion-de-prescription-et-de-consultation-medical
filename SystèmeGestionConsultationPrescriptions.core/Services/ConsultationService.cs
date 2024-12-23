@@ -167,5 +167,15 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Services
                 }
             }
         }
+
+        public async Task<IEnumerable<Prescription>> GetAllPrescriptionsAsync(int consultationId)
+        {
+            return await _consultationRepository.GetAllPrescriptionsAsync(consultationId);
+        }
+
+        public IEnumerable<Prescription> GetAllPrescriptions(int consultationId)
+        {
+            return _consultationRepository.GetAllPrescriptions(consultationId);
+        }
     }
 }

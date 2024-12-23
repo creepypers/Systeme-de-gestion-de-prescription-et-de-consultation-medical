@@ -19,7 +19,7 @@ using System.Threading.Tasks;
         Task<Consultation> GetByIdWithSessionAsync(Session session);
         Consultation GetByIdWithSession(Session session);
 
-
-
+        Task<IEnumerable<Prescription>> GetAllPrescriptionsAsync(int consultationId);
+        IEnumerable<Prescription> GetAllPrescriptions(int consultationId);
     }
 }

@@ -19,6 +19,9 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
 
         Task<Session> GetByIdWithDossierMedicalAsync(int id);
         Session GetByIdWithDossierMedical(int id);
-       
+
+        Task<Session> CreateAsync(Session session);
+        Task<Session> GetByIdAsync(int id);
+        Task UpdateAsync(Session session);
     }
 }

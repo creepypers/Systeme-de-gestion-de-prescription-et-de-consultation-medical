@@ -30,6 +30,7 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
         DossierMedical GetDossierMedicalById(int idDossier);
         int DeleteDossierMedical(DossierMedical dossier);
         
-        
+        Task<IEnumerable<Consultation>> GetAllConsultationsAsync(int dossierMedicalId);
+        IEnumerable<Consultation> GetAllConsultations(int dossierMedicalId);
     }
 }

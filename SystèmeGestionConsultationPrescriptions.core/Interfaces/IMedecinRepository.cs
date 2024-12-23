@@ -16,6 +16,9 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
         Task<Medecin> GetByIdWithSessionsAsync(int id);
         Medecin GetByIdWithSessions(int id);
 
+        Task<IEnumerable<Patient>> GetAllPatientsAsync(int medecinId);
+        IEnumerable<Patient> GetAllPatients(int medecinId);
 
+        Task<Medecin> GetByUsernameAsync(string nomUtilisateur);
     }
 }

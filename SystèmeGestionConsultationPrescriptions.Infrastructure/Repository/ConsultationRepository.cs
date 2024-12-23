@@ -54,5 +54,93 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Repository
                 .Include(c => c.Session)
                 .FirstOrDefault(c => c.SessionId == session.Id)!;
         }
+
+        public async Task<IEnumerable<Prescription>> GetAllPrescriptionsAsync(int consultationId)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.Consultations
+                .Where(c => c.Id == consultationId)
+                .SelectMany(c => c.Prescriptions)
+                .ToListAsync();
+        }
+
+        public IEnumerable<Prescription> GetAllPrescriptions(int consultationId)
+        {
+            return _SystèmeGestionConsultationPrescriptionsContext.Consultations
+                .Where(c => c.Id == consultationId)
+                .SelectMany(c => c.Prescriptions)
+                .ToList();
+        }
+
+        public async Task<IEnumerable<Consultation>> GetByMedecinIdAsync(int medecinId)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.Consultations
+                .Include(c => c.Session)
+                .Include(c => c.DossierMedical)
+                    .ThenInclude(d => d.Patient)
+                .Where(c => c.Session.MedecinId == medecinId)
+                .OrderByDescending(c => c.Date)
+                .ToListAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var consultation = await _SystèmeGestionConsultationPrescriptionsContext.Consultations.FindAsync(id);
+            if (consultation != null)
+            {
+                _SystèmeGestionConsultationPrescriptionsContext.Consultations.Remove(consultation);
+                await _SystèmeGestionConsultationPrescriptionsContext.SaveChangesAsync();
+            }
+        }
+
+        public async Task<Prescription> GetPrescriptionByIdAsync(int prescriptionId)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.Prescriptions
+                .FirstOrDefaultAsync(p => p.Id == prescriptionId);
+        }
+
+        public async Task UpdatePrescriptionAsync(Prescription prescription)
+        {
+            _SystèmeGestionConsultationPrescriptionsContext.Prescriptions.Update(prescription);
+            await _SystèmeGestionConsultationPrescriptionsContext.SaveChangesAsync();
+        }
+
+        public async Task AddPrescriptionAsync(Prescription prescription)
+        {
+            await _SystèmeGestionConsultationPrescriptionsContext.Prescriptions.AddAsync(prescription);
+            await _SystèmeGestionConsultationPrescriptionsContext.SaveChangesAsync();
+        }
+
+        public async Task ChangerEtatAsync(int consultationId, int prescriptionId)
+        {
+            var consultation = await _SystèmeGestionConsultationPrescriptionsContext.Consultations.FindAsync(consultationId);
+            if (consultation != null)
+            {
+                consultation.ChangerEtat(prescriptionId);
+                await _SystèmeGestionConsultationPrescriptionsContext.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeletePrescriptionAsync(int prescriptionId)
+        {
+            var prescription = await _SystèmeGestionConsultationPrescriptionsContext.Prescriptions.FindAsync(prescriptionId);
+            if (prescription != null)
+            {
+                _SystèmeGestionConsultationPrescriptionsContext.Prescriptions.Remove(prescription);
+                await _SystèmeGestionConsultationPrescriptionsContext.SaveChangesAsync();
+            }
+        }
+
+        public async Task<IEnumerable<Prescription>> GetPrescriptionsByMedecinIdAsync(int medecinId)
+{
+    return await _SystèmeGestionConsultationPrescriptionsContext.Prescriptions
+        .Include(p => p.Consultation)
+            .ThenInclude(c => c.Session)
+        .Include(p => p.Consultation)
+            .ThenInclude(c => c.DossierMedical)
+                .ThenInclude(d => d.Patient)
+        .Where(p => p.Consultation.Session.MedecinId == medecinId)
+        .OrderByDescending(p => p.Consultation.Date)
+        .ToListAsync();
+}
     }
 }

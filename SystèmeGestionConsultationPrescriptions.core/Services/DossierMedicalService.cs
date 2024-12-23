@@ -97,5 +97,15 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Services
             _dossierMedicalRepository.Delete(dossier);
             return dossier.Id;
         }
+
+        public async Task<IEnumerable<Consultation>> GetAllConsultationsAsync(int dossierMedicalId)
+        {
+            return await _dossierMedicalRepository.GetAllConsultationsAsync(dossierMedicalId);
+        }
+
+        public IEnumerable<Consultation> GetAllConsultations(int dossierMedicalId)
+        {
+            return _dossierMedicalRepository.GetAllConsultations(dossierMedicalId);
+        }
     }
 }

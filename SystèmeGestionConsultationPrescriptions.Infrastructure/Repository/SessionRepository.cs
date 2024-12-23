@@ -52,6 +52,13 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Repository
                 .FirstOrDefaultAsync(p => p.Id == id)!;
         }
 
+        public async Task<Session> CreateAsync(Session session)
+        {
+            _SystèmeGestionConsultationPrescriptionsContext.Sessions.Add(session);
+            await _SystèmeGestionConsultationPrescriptionsContext.SaveChangesAsync();
+            return session;
+        }
+
         
 
        

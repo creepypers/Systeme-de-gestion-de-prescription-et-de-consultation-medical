@@ -1,0 +1,311 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.UserInterface\\SystèmeGestionConsultationPrescriptions.UserInterface.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.core\\SystèmeGestionConsultationPrescriptions.core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.core\\SystèmeGestionConsultationPrescriptions.core.csproj",
+        "projectName": "SystèmeGestionConsultationPrescriptions.core",
+        "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.core\\SystèmeGestionConsultationPrescriptions.core.csproj",
+        "packagesPath": "C:\\Users\\elida\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\elida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.SharedKernel\\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj": {
+                "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.SharedKernel\\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Infrastructure\\SystèmeGestionConsultationPrescriptions.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Infrastructure\\SystèmeGestionConsultationPrescriptions.Infrastructure.csproj",
+        "projectName": "SystèmeGestionConsultationPrescriptions.Infrastructure",
+        "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Infrastructure\\SystèmeGestionConsultationPrescriptions.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\elida\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\elida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Core\\SystèmeGestionConsultationPrescriptions.Core.csproj": {
+                "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Core\\SystèmeGestionConsultationPrescriptions.Core.csproj"
+              },
+              "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.SharedKernel\\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj": {
+                "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.SharedKernel\\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.SharedKernel\\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.SharedKernel\\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj",
+        "projectName": "SystèmeGestionConsultationPrescriptions.SharedKernel",
+        "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.SharedKernel\\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj",
+        "packagesPath": "C:\\Users\\elida\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.SharedKernel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\elida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.UserInterface\\SystèmeGestionConsultationPrescriptions.UserInterface.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.UserInterface\\SystèmeGestionConsultationPrescriptions.UserInterface.csproj",
+        "projectName": "SystèmeGestionConsultationPrescriptions.UserInterface",
+        "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.UserInterface\\SystèmeGestionConsultationPrescriptions.UserInterface.csproj",
+        "packagesPath": "C:\\Users\\elida\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.UserInterface\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\elida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0-windows7.0": {
+            "targetAlias": "net9.0-windows",
+            "projectReferences": {
+              "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.core\\SystèmeGestionConsultationPrescriptions.core.csproj": {
+                "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.core\\SystèmeGestionConsultationPrescriptions.core.csproj"
+              },
+              "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Infrastructure\\SystèmeGestionConsultationPrescriptions.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\elida\\Downloads\\Architecture Clean\\Architecture Clean\\SystèmeGestionConsultationPrescriptions.Infrastructure\\SystèmeGestionConsultationPrescriptions.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0-windows7.0": {
+          "targetAlias": "net9.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

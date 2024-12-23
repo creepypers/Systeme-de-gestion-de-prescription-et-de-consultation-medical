@@ -56,5 +56,30 @@ namespace SystèmeGestionConsultationPrescriptions.Infrastructure.Repository
                 .ThenInclude(c => c.Prescriptions)
                 .FirstOrDefault(d => d.Id == id)!;
         }
+
+        public async Task<IEnumerable<Consultation>> GetAllConsultationsAsync(int dossierMedicalId)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.DossiersMedical
+                .Where(d => d.Id == dossierMedicalId)
+                .SelectMany(d => d.Consultations)
+                .ToListAsync();
+        }
+
+        public IEnumerable<Consultation> GetAllConsultations(int dossierMedicalId)
+        {
+            return _SystèmeGestionConsultationPrescriptionsContext.DossiersMedical
+                .Where(d => d.Id == dossierMedicalId)
+                .SelectMany(d => d.Consultations)
+                .ToList();
+        }
+
+        public async Task<IEnumerable<DossierMedical>> GetByMedecinIdAsync(int medecinId)
+        {
+            return await _SystèmeGestionConsultationPrescriptionsContext.DossiersMedical
+                .Include(d => d.Patient)
+                .Where(d => d.Patient.MedecinId == medecinId)
+                .OrderByDescending(d => d.DateCreation)
+                .ToListAsync();
+        }
     }
 }

@@ -112,5 +112,15 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Services
             _medecinRepository.Delete(medecin);
             return medecin.Id;
         }
+
+        public async Task<IEnumerable<Patient>> GetAllPatientsAsync(int medecinId)
+        {
+            return await _medecinRepository.GetAllPatientsAsync(medecinId);
+        }
+
+        public IEnumerable<Patient> GetAllPatients(int medecinId)
+        {
+            return _medecinRepository.GetAllPatients(medecinId);
+        }
     }
 }

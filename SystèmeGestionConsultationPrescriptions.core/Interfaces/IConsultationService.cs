@@ -32,5 +32,8 @@ namespace SystèmeGestionConsultationPrescriptions.Core.Interfaces
         
         
         List<Consultation> GetConsultations(bool includePrescriptions);
+
+        Task<IEnumerable<Prescription>> GetAllPrescriptionsAsync(int consultationId);
+        IEnumerable<Prescription> GetAllPrescriptions(int consultationId);
     }
 }
