@@ -247,7 +247,7 @@ Ce projet est développé dans le cadre d'un TP d'architecture logicielle.
 
 ## 👨‍💻 Auteur
 
-**Étudiant en Architecture Logicielle**
+**Étudiant en Informatique*
 - Université du Québec à Rimouski (UQAR)
 
 ## 🙏 Remerciements
@@ -260,6 +260,6 @@ Ce projet est développé dans le cadre d'un TP d'architecture logicielle.
 
 **Développé avec ❤️ en utilisant Clean Architecture et .NET 8**
 
-[![GitHub stars](https://img.shields.io/github/stars/username/repo.svg?style=social&label=Star)](https://github.com/username/repo)
-[![GitHub forks](https://img.shields.io/github/forks/username/repo.svg?style=social&label=Fork)](https://github.com/username/repo/fork)
-[![GitHub watchers](https://img.shields.io/github/watchers/username/repo.svg?style=social&label=Watch)](https://github.com/username/repo)
+[![GitHub stars](https://img.shields.io/github/stars/username/repo.svg?style=social&label=Star)](https://github.com/creepypers/repo)
+[![GitHub forks](https://img.shields.io/github/forks/username/repo.svg?style=social&label=Fork)](https://github.com/creepypers/repo/fork)
+[![GitHub watchers](https://img.shields.io/github/watchers/username/repo.svg?style=social&label=Watch)](https://github.com/creepypers/repo)
