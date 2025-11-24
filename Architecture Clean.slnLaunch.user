@@ -1,6 +1,27 @@
 [
   {
     "Name": "Nouveau profil",
-    "Projects": []
+    "Projects": [
+      {
+        "Path": "SystèmeGestionConsultationPrescriptions.SharedKernel\\SystèmeGestionConsultationPrescriptions.SharedKernel.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SystèmeGestionConsultationPrescriptions.ConsoleTestApp\\SystèmeGestionConsultationPrescriptions.ConsoleTestApp.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SystèmeGestionConsultationPrescriptions.core\\SystèmeGestionConsultationPrescriptions.core.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SystèmeGestionConsultationPrescriptions.Infrastructure\\SystèmeGestionConsultationPrescriptions.Infrastructure.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SystèmeGestionConsultationPrescriptions.Interfaceutilisateur\\SystèmeGestionConsultationPrescriptions.Interfaceutilisateur.csproj",
+        "Action": "Start"
+      }
+    ]
   }
 ]

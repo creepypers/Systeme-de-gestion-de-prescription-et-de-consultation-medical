@@ -27,11 +27,11 @@ Système de gestion médicale développé avec une architecture Clean, permettan
 
 ```
 Architecture Clean/
-├── SystèmeGestionConsultationPrescriptions.SharedKernel/     # Couche partagée
-├── SystèmeGestionConsultationPrescriptions.core/             # Logique métier
-├── SystèmeGestionConsultationPrescriptions.Infrastructure/   # Accès aux données
-├── SystèmeGestionConsultationPrescriptions.UserInterface/    # Interface WPF
-└── SystèmeGestionConsultationPrescriptions.ConsoleTestApp/   # Application de test
+├── SGCP.Shared/     # Couche partagée
+├── SGCP.Core/       # Logique métier
+├── SGCP.Infra/      # Accès aux données
+├── SGCP.UI/         # Interface WPF
+└── SGCP.Test/       # Application de test
 ```
 
 ## 🔐 Identifiants de Connexion
@@ -40,12 +40,7 @@ Architecture Clean/
 
 | **Nom d'utilisateur** | **Mot de passe** | **Médecin** | **Numéro de licence** | **Email** |
 |----------------------|------------------|-------------|----------------------|-----------|
-| `admin` | `admin123` | Dr. Admin | ADMIN001 | admin@hospital.com |
-| `dr.dupont` | `medecin123` | Dr. Jean Dupont | MED001 | j.dupont@hospital.com |
-| `dr.martin` | `medecin456` | Dr. Marie Martin | MED002 | m.martin@hospital.com |
-| `dr.leblanc` | `medecin789` | Dr. Pierre Leblanc | MED003 | p.leblanc@hospital.com |
-| `dr.tremblay` | `medecin101` | Dr. Sophie Tremblay | MED004 | s.tremblay@hospital.com |
-| `test` | `test123` | Dr. Test | TEST001 | test@hospital.com |
+| `dr.house` | `password` | Dr. Gregory House | HOUSE001 | g.house@hospital.com |
 
 ## 🚀 Démarrage Rapide
 
