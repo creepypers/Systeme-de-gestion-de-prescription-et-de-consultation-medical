@@ -1,29 +1,29 @@
-# 🏥 Système de Gestion et de Consultation Médicale
+# Système de Gestion et de Consultation Médicale
 
 [![.NET](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/download)
 [![Entity Framework Core](https://img.shields.io/badge/EF%20Core-9.0-green.svg)](https://docs.microsoft.com/en-us/ef/core/)
 [![WPF](https://img.shields.io/badge/WPF-Windows%20Presentation%20Foundation-purple.svg)](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/)
 [![Clean Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-orange.svg)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
-## 📋 Description
+## Description
 Système de gestion médicale développé avec une architecture Clean, permettant la gestion des patients, dossiers médicaux, consultations et prescriptions. Ce projet démontre l'implémentation des principes SOLID et des patterns de conception dans une application .NET moderne.
 
-## ✨ Fonctionnalités Principales
-- 🔐 **Authentification sécurisée** des médecins
-- 👥 **Gestion complète des patients** (CRUD)
-- 📋 **Dossiers médicaux** avec historique des traitements
-- 🩺 **Consultations** avec diagnostics et observations
-- 💊 **Prescriptions** avec suivi des médicaments
-- 📊 **Interface WPF** moderne et intuitive
-- 🗄️ **Base de données** avec Entity Framework Core
+## Fonctionnalités Principales
+- **Authentification sécurisée** des médecins
+- **Gestion complète des patients** (CRUD)
+- **Dossiers médicaux** avec historique des traitements
+- **Consultations** avec diagnostics et observations
+- **Prescriptions** avec suivi des médicaments
+- **Interface WPF** moderne et intuitive
+- **Base de données** avec Entity Framework Core
 
-## 🏗️ Architecture
+## Architecture
 - **Clean Architecture** avec séparation des couches
 - **Entity Framework Core** pour la persistance des données
 - **WPF** pour l'interface utilisateur
 - **SQL Server LocalDB** pour la base de données
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 Architecture Clean/
@@ -34,15 +34,15 @@ Architecture Clean/
 └── SGCP.Test/       # Application de test
 ```
 
-## 🔐 Identifiants de Connexion
+## Identifiants de Connexion
 
-### 👨‍⚕️ Médecins
+### Médecins
 
 | **Nom d'utilisateur** | **Mot de passe** | **Médecin** | **Numéro de licence** | **Email** |
 |----------------------|------------------|-------------|----------------------|-----------|
 | `dr.house` | `password` | Dr. Gregory House | HOUSE001 | g.house@hospital.com |
 
-## 🚀 Démarrage Rapide
+## Démarrage Rapide
 
 ### 1. Prérequis
 - .NET 8.0 SDK
@@ -76,11 +76,11 @@ dotnet ef database update --project SystèmeGestionConsultationPrescriptions.Inf
 dotnet run --project "SystèmeGestionConsultationPrescriptions.UserInterface/Systeme de gestion et de consultation medicale"
 ```
 
-## 📊 Données de Test
+## Données de Test
 
 Le système inclut des données de test complètes :
 
-### 👥 Patients (10 patients)
+### Patients (10 patients)
 - Dupont Jean (1980) - Dr. Admin
 - Martin Marie (1975) - Dr. Dupont
 - Bernard Pierre (1990) - Dr. Admin
@@ -92,12 +92,12 @@ Le système inclut des données de test complètes :
 - Morin David (1982) - Dr. Tremblay
 - Pelletier Isabelle (1978) - Dr. Tremblay
 
-### 📋 Dossiers Médicaux
+### Dossiers Médicaux
 - Un dossier médical pour chaque patient
 - Traitements passés (Amoxicilline, Ibuprofène, Paracétamol)
 - Dates de création échelonnées
 
-### 🩺 Consultations (8 consultations)
+### Consultations (8 consultations)
 - **Motifs variés** : Consultation de routine, Douleur thoracique, Maux de tête, etc.
 - **Diagnostics réalistes** : Hypertension, Migraine, Reflux gastro-œsophagien, etc.
 - **Observations détaillées** pour chaque consultation
